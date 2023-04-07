@@ -22,10 +22,10 @@
     
     <?php
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // 사용자로부터 도형과 속성을 입력받음
+        
         $shape = $_POST['shape'];
 
-        // 도형에 따라 필요한 속성을 입력받음
+        
         switch ($shape) {
           case 'triangle':
             $input1 = '밑변: <input type="number" name="base"><br>';
@@ -54,7 +54,7 @@
             break;
         }
 
-        // 도형에 따라 필요한 속성 입력란을 출력함
+        
         echo '<form method="post" action="calc.php">';
         echo '<input type="hidden" name="shape" value="'.$shape.'">';
         echo $input1;
@@ -64,7 +64,7 @@
             }
             echo '<input type="submit" value="계산">';
             echo '</form>';
-            // 도형에 따라 계산을 수행하고 결과를 출력함
+            
             switch ($shape) {
                 case 'triangle':
                     $base = $_POST['base'];
